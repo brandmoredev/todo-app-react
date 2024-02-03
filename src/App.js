@@ -66,7 +66,7 @@ const App = () => {
       const getTask = await fetch(`https://brandmoredev.github.io/todo-app-react/tasks/${id}`)
       const tasksData = await getTask.json();
 
-      await fetch(`https://brandmoredev.github.io/todo-app-react/tasks/${id}`, {
+      await fetch(`http://localhost:5050/tasks/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -87,7 +87,7 @@ const App = () => {
 
   const addTask = async({ title, reminder }) => {
     //Update backend data
-    const postTask = await fetch(`https://brandmoredev.github.io/todo-app-react/tasks`, {
+    const postTask = await fetch(`http://localhost:5050/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -104,7 +104,7 @@ const App = () => {
 
   const deleteTask = async(id) => {
     //Update backend data
-    await fetch(`https://brandmoredev.github.io/todo-app-react/tasks/${id}`, {
+    await fetch(`http://localhost:5050/tasks/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
